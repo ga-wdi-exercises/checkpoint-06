@@ -123,7 +123,15 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+# $.ajax ({
+    type: "POST",
+    data: {},
+    dataType: 'json',
+    url: "/posts"
+}).done((response) => {
+  }).fail((response) => {
+    
+    })
 ```
 
 ### Question 7
