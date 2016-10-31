@@ -152,10 +152,10 @@ Let's say the Posts in the previous question are available when you visit `http:
   1.$.post( "ajax/test.html", function( data ) {
     $( ".result" ).html( data );
   });
-  2.var jqxhr = $.post( "example.php", function() {
+    .var jqxhr = $.post( "example.php", function() {
       alert( "success" );
     })
-    .done(function() {
+  2. .done(function() {
         alert( "second success" );
       })
   3..fail(function() {
@@ -179,4 +179,11 @@ If the Post creation is successful, the new Post should be printed to the browse
 
 ```js
 // Your answer goes here...
+$(document).ready(function () {
+        $.ajax({
+            url: "http://localhost:3000/posts",
+            type: "Get",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $("
 ```
