@@ -15,7 +15,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -27,16 +30,14 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 <button data-ng-click="vm.create()">Click</button>
 ```
 
-```text
-Your answer goes here...
+```In this case, there is no difference. Its a matter of preference whether we want to prefix data or directly want to use ng for angular.
 ```
 
 ### Question 3
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
-```text
-Your answer goes here...
+```A. While putting it in the body makes the scope smaller and slightly faster, putting it in the HTML tag will present a scope for the whole HTML; including the title.
 ```
 
 #### A
@@ -93,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -101,8 +102,7 @@ Which one of the following concepts does this best illustrate?
 
 What is the `ui-sref` directive, and how is it used?
 
-```text
-Your answer goes here...
+```This Directive is used on <a> tags. To speak in Rails terms, it acts similarly to a link_to helper. The ui-sref essentially gives us a shortcut to different states defined in our "router" function. If the corresponding state has a URL, it will bring us to that URL upon click.
 ```
 
 ## Part II: APIs
