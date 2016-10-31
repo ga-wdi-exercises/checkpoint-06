@@ -30,7 +30,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They both do the same thing but using data-, it makes it a HTML validator compliant
 ```
 
 ### Question 3
@@ -38,7 +38,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A
 ```
 
 #### A
