@@ -31,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+There is no difference other than data-ng-click will validate in html5, while ng-click will not
 ```
 
 ### Question 3
