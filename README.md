@@ -123,7 +123,16 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts }
+    end
+  end
+end
 ```
 
 ### Question 7
@@ -134,7 +143,18 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+angular
+  .module('blog', [
+    'ngResource'
+  ])
+  .factory( 'postFactory', [
+    '$resource',
+    PostFactoryFunction
+  ])
+
+  function PostFactoryFunction($resource) {
+    return $resource("http://localhost:3000/posts.json")
+  }
 ```
 
 ### Question 8
@@ -147,5 +167,12 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  type: 'POST',
+  url: '/posts',
+  dataType: 'json',data: {
+    title: 'Post title goes here',
+    body: 'Post body goes here'
+  }
+})
 ```
