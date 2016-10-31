@@ -15,7 +15,6 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
 angular.module('blog', [ui.router]);
 ```
 
@@ -104,7 +103,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is a directive that binds an <a> tag to a state. It automatically updates and generates a change to the URL when needed.
+
 ```
 
 ## Part II: APIs
