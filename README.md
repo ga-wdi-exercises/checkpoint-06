@@ -36,7 +36,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+// Option A is the best usage of ng-app. You are instantiating ng-app to be applied for your entire web application. For option A, it is located in the HTML. There you can use angular in all parts of your web app. In B, ng-app is in the head, which will only be applicable in the head. Same goes for C, where the ng-app is in a div...below another angular function. That will error out. Also we need to link our angular scripts to the head to make this bad boy up and running.
 ```
 
 #### A

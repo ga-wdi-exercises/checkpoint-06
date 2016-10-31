@@ -7,4 +7,7 @@ angular
     Router])
 
 
-  function Router
+  function Router($stateProvider){
+    $stateProvider
+    .state()
+  }
