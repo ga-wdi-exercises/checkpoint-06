@@ -142,7 +142,17 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+var url = http://localhost:3000
+$.ajax({
+  url: url,
+  type: "get",
+  dataType: "json",
+
+}).done((response) => {
+  console.log(response);
+}).fail((response) => {
+  console.log("Ajax get request failed");
+})
 ```
 
 ### Question 8
