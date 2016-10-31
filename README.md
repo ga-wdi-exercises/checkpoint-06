@@ -30,6 +30,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 ```text
 Your answer goes here...
+They have the same functionality by ng-dataclick will pass an HTML validation test whilst ng-click will not.
 ```
 
 ### Question 3
@@ -37,7 +38,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A is the best choice. Placing it on the html tag ensures that the entire document is ready to have angular placed into it.
 ```
 
 #### A
