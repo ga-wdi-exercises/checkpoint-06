@@ -104,7 +104,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It is similar to link_to in rails. It can redirect to another page by having a state's name after ui-sref
 ```
 
 ## Part II: APIs
