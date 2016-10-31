@@ -95,7 +95,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ x ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
