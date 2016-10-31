@@ -91,11 +91,11 @@ A
 Imagine an app in which a change to the view updates the model without a page refresh, and a change to the model updates the view without a page refresh.
 
 Which one of the following concepts does this best illustrate?
-
+C 
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ X ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
