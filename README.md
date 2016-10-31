@@ -123,7 +123,11 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    render json: @posts.to_json
+  end
 ```
 
 ### Question 7
