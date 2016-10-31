@@ -39,7 +39,7 @@ There is no difference other than data-ng-click will validate in html5, while ng
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A. Declaring your ng-app in the html tag gives your app a wider score (for example, this way you'll be able to manipulate the title)
 ```
 
 #### A
