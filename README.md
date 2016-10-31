@@ -22,13 +22,15 @@ angular.module("blog", ["ui.router"])
 
 One button below has an `ng-click` attribute; the other has `data-ng-click` instead. What difference does it make?
 
+
+
 ```html
 <button ng-click="vm.create()">Click</button>
 <button data-ng-click="vm.create()">Click</button>
 ```
 
 ```text
-Your answer goes here...
+It does not make a difference, both will respond the same way.
 ```
 
 ### Question 3
@@ -36,7 +38,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+ng-app is a directive used to tell html to run angular and reference some javascript code. (A) is the best demonstration of ng-app because it is best to initialize it in the html tag.  
 ```
 
 #### A
@@ -93,7 +95,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +104,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is equivalent to link_to in rails.  It establishes a link to the path or url that is referenced e.g. in the example above "<h1><a data-ui-sref="index">My App</a></h1>", "index" will be hyperlinked and when the user clicks on it, it will take them to 'My App' page
 ```
 
 ## Part II: APIs
@@ -120,7 +122,11 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+
+respond_to do |format|
+ format.html { render :index }
+ format.json { render json: @grumbles }
+end
 ```
 
 ### Question 7
