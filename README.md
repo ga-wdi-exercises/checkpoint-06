@@ -120,7 +120,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render :json @posts}
+  end
+end
 ```
 
 ### Question 7
@@ -131,7 +138,16 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
+$.ajax.({
+  dataType: "json",
+  url: "/index",
+  type: "GET"
+}).done((response) =>{
+  console.log(response)
+}).fail(() => {
+console.log("Error, Ajax unsuccessful")}
+)
 ```
 
 ### Question 8
@@ -144,5 +160,19 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(".post").on("click", () =>{
+  let title = $(".title").val()
+  let body = $".body").val()
+  $.ajax({
+    type: "POST",
+    data: {post: {title: title, body: body}},
+    dataType: "json"
+    url: "/index"
+  }).done((response) => {
+    console.log(response);
+  }).fail((response) =>{
+    console.log("Ajax failed")
+  })
+})
+
 ```
