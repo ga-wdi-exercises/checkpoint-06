@@ -135,6 +135,9 @@ end
 
 ```rb
 # Your answer goes here...
+respond_to do |format|
+  format.html { render :index }
+  format.json { render json: @posts}
 ```
 
 ### Question 7
@@ -146,6 +149,23 @@ Let's say the Posts in the previous question are available when you visit `http:
 
 ```js
 // Your answer goes here...
+  1.$.post( "ajax/test.html", function( data ) {
+    $( ".result" ).html( data );
+  });
+  2.var jqxhr = $.post( "example.php", function() {
+      alert( "success" );
+    })
+    .done(function() {
+        alert( "second success" );
+      })
+  3..fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+        alert( "finished" );
+      });
+
+
 ```
 
 ### Question 8
