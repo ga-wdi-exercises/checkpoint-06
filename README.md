@@ -30,7 +30,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+I think data-ng-click will only trigger the event in forms. 
 ```
 
 ### Question 3
