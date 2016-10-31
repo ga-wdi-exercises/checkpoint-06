@@ -138,7 +138,20 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$("button").on("click", () => {
+  var url = "http://file"
+  $.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+  }).done(() => {
+    console.log("Ajax request success!")
+  }).fail(() => {
+    console.log("Ajax request fails!")
+  }).always(() => {
+    console.log("This always happens regardless of successful ajax request or not.")
+  })
+})
 ```
 
 ### Question 8
