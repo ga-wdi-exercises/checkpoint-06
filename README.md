@@ -15,7 +15,11 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blogApp", [
+    "ui.router"
+  ])
+
 ```
 
 ### Question 2
@@ -28,7 +32,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+data-ng-click allows us to use an html verifier
 ```
 
 ### Question 3
@@ -36,7 +40,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A because it is being called on the html tag and now myapp will be attributed to everything inside the html tags
 ```
 
 #### A
@@ -93,7 +97,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +106,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref (<a ui-sref='index'>) is the angular version of href (<a href='index'>). It allows us to link to a state defined in our angular file
 ```
 
 ## Part II: APIs
@@ -120,7 +124,10 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to do |format|
+  format.html {render :index}
+  format.json {redner json: @posts}
+end
 ```
 
 ### Question 7
@@ -131,7 +138,9 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+1. "http://localhost:3000.json"
+2. puts (json: @posts);
+3.
 ```
 
 ### Question 8
@@ -144,5 +153,23 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(".post").on('click', () => {
+  $.ajax({
+    type: "POST",
+    data: {
+      post{
+        title: ,
+        body:
+      }
+    },
+    dataType: 'json',
+    url:"/:id"
+  }).done((response) => {
+    console.log(response)
+  }).fail((response) =>{
+    console.log("failed post");
+  })
+})
+
+
 ```
