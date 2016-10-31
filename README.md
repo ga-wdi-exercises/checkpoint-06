@@ -15,7 +15,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+// Done
 ```
 
 ### Question 2
@@ -28,7 +28,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+// They both perform the same angular function, however data-ng-click will pass when validating the html for html5.
 ```
 
 ### Question 3
