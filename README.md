@@ -15,7 +15,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+  "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -28,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+HTML will validate with the `data` prefix.
 ```
 
 ### Question 3
@@ -36,7 +39,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+B. Because it tells the browser that this is an angular application in the html tag therefore allowing angular to be used anywhere before the closing html tag.
 ```
 
 #### A
@@ -93,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It binds the `a` (tag) to a state, auto generating and updating the `href` via the `$state.href()` method.
 ```
 
 ## Part II: APIs
@@ -120,7 +123,13 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+format.html { render :show }
+format.json { render json: @posts }
+```
+
+I also found that this works as well - Mike
+```rb
+render :json => @posts
 ```
 
 ### Question 7
@@ -131,7 +140,24 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+// longhand
+$.ajax({
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
+})
+
+// using the shorthand
+var test = $.getJSON( "test.json", function() {
+  console.log("this works!")
+})
+.done(function() {
+  console.log("this definitely works!")
+})
+.fail(function() {
+  console.log("doesn't work!")
+})
 ```
 
 ### Question 8
@@ -144,5 +170,12 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.post( "test.html", { title: "Cool Beans", body: "Lorem ipsum dolor sit amet" } ) {
+  .done(function(){
+    console.log("success")
+  })
+  .fail(function(){
+    console.log("error message")
+  })
+}
 ```
