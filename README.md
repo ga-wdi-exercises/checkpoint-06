@@ -31,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+There's really no big difference between ng-click and data-ng-click.  It's merely a matter of if you want to pass a data attribute to the element that'll be clicked.
 ```
 
 ### Question 3
