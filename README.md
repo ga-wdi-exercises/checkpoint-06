@@ -16,6 +16,8 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+angular
+.module("blog",["ui.router"])
 ```
 
 ### Question 2
