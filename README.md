@@ -30,7 +30,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-I think data-ng-click will only trigger the event in forms. 
+I think data-ng-click will only trigger the event in forms.
 ```
 
 ### Question 3
@@ -38,7 +38,7 @@ I think data-ng-click will only trigger the event in forms.
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+C. The page will load faster because only the content inside the div will get updated. 
 ```
 
 #### A
