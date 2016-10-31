@@ -38,8 +38,8 @@ There's really no big difference between ng-click and data-ng-click.  It's merel
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
-```text
-Your answer goes here...
+```
+The ng-app directive tells AngularJS what the root element of the HTML file is.  The best usage would be in the HTML tag since this encapsulates all of the HTML that you would like to display.
 ```
 
 #### A
