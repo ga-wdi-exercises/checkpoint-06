@@ -38,7 +38,7 @@ I think data-ng-click will only trigger the event in forms.
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-C. The page will load faster because only the content inside the div will get updated. 
+C. The page will load faster because only the content inside the div will get updated.
 ```
 
 #### A
@@ -95,7 +95,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
