@@ -15,7 +15,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+// Done
 ```
 
 ### Question 2
@@ -28,7 +28,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+// They both perform the same angular function, however data-ng-click will pass when validating the html for html5.
 ```
 
 ### Question 3
@@ -36,7 +36,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+// Option A is the best usage of ng-app. You are instantiating ng-app to be applied for your entire web application. For option A, it is located in the HTML. There you can use angular in all parts of your web app. In B, ng-app is in the head, which will only be applicable in the head. Same goes for C, where the ng-app is in a div...below another angular function. That will error out. Also we need to link our angular scripts to the head to make this bad boy up and running.
 ```
 
 #### A
@@ -93,7 +93,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +102,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+// The ui-sref directive is associated with the use of the ui-router. It acts as a link to another page. Very similar to href..but more angular.
 ```
 
 ## Part II: APIs
@@ -120,8 +120,17 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+#My Answer
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.json{ render json: @posts}
+    end
+  end
+end
 ```
+
 
 ### Question 7
 
@@ -131,7 +140,16 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+var url = "https://localhost:3000.json"
+  $.ajax({
+    url: url,
+    type: "GET",
+    dataType: "json"
+  }).done((response) => {
+    console.log(response)
+  }).fail(() => {
+    console.log("Failed. Try Again")
+  })
 ```
 
 ### Question 8
@@ -144,5 +162,22 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+var url = "https://localhost:3000.json"
+  $.ajax({
+    type: 'POST',
+    data: {
+      post: {
+        title: "Hi",
+        body: "Hello World"
+      }
+    },
+    dataType: 'json',
+    url: url
+  }).done((response) =>  {
+    console.log(response);
+  }).fail((response) => {
+    console.log("Failed. Try Again");
+  })
+})
+})
 ```
