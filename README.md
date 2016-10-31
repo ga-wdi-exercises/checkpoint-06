@@ -31,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+Adding the 'data' prefix makes the attribute html5 validation compatible. This also allows for custom data attributes.
 ```
 
 ### Question 3
