@@ -31,8 +31,8 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
-```
+There is no diffrence in between the two! I guess its more o a
+preference thing.```
 
 ### Question 3
 
