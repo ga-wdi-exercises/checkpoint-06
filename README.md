@@ -45,7 +45,7 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 ```text
 Your answer goes here...
 #### A
-ng-app directives should be placed at the root of an HTML document 
+ng-app directives should be placed at the root of an HTML document
 
 ```
 
@@ -103,7 +103,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -113,6 +113,7 @@ What is the `ui-sref` directive, and how is it used?
 
 ```text
 Your answer goes here...
+A directive that binds a link (<a> tag) to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method. Clicking the link will trigger a state transition with optional parameters.
 ```
 
 ## Part II: APIs
