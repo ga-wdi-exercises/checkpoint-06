@@ -15,7 +15,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -36,7 +39,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A;  data-ng-app establishes the domain of the application, therefore when it is used in the HTML tag it encompasses the entire HTML document instead of only the head or the div.
 ```
 
 #### A
@@ -93,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It creates a link that directs to the index page without reloading.
 ```
 
 ## Part II: APIs
@@ -120,7 +123,12 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+
+  respond_to do |format|
+    format.html { render :index }
+    format.json { render json: @posts }
+  end
+
 ```
 
 ### Question 7
@@ -131,7 +139,7 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
 ```
 
 ### Question 8
