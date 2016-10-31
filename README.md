@@ -130,7 +130,7 @@ end
     url: "/posts"
 }).done((response) => {
   }).fail((response) => {
-    
+
     })
 ```
 
@@ -142,8 +142,13 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
-```
+$.getJSON ("app.js", function (json){
+.done((response) => {
+  console.log(reponse)
+  }).fail((response) => {
+    console.log("Request failed")
+    })
+})
 
 ### Question 8
 
