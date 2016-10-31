@@ -39,7 +39,7 @@ Adding the 'data' prefix makes the attribute html5 validation compatible. This a
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A is best. Each web app should only have one ng-app attribute, matched to the module name in app.js. Therefore, in order for the attribute to apply to the whole app, it should be included in the html bracket.
 ```
 
 #### A
