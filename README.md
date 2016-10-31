@@ -31,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+If you want to use an HTML validator you need to use data-ng-click.
 ```
 
 ### Question 3
@@ -39,7 +39,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A. When you place it at the root in HTML it will get loaded immediately.
 ```
 
 #### A
