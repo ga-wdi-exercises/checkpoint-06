@@ -91,7 +91,7 @@ A
 Imagine an app in which a change to the view updates the model without a page refresh, and a change to the model updates the view without a page refresh.
 
 Which one of the following concepts does this best illustrate?
-C 
+C
 ```
 [ ] A: Modularity
 [ ] B: MVC
@@ -104,7 +104,8 @@ C
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+this is a directive that binds a link to a state. if the state has a URL, the directive will generate and update the href. you would use $state.href() method and upon the link being clicked, the link will trigger a state transition with optional parameters.
+
 ```
 
 ## Part II: APIs
