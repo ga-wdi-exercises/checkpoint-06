@@ -123,8 +123,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
-```
+def index
+  @posts = Post.all
+respond_to do |format|
+   format.html
+   format.json{
+   end
+ end
+   }```
 
 ### Question 7
 
@@ -134,7 +140,15 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
+
+$.getJSON( "index.html", {} )
+  .done(function( json ) {
+    console.log( "JSON Data:()");
+  })
+  .fail(function() {
+    console.log( "error, couldn't retrieve .json data." );
+});
 ```
 
 ### Question 8
