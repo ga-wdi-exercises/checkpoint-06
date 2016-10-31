@@ -117,14 +117,13 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    format.html
-    format.json { render json: @posts }
   end
 end
 ```
 
 ```rb
-# Your answer goes here...
+format.html
+format.json { render json: @cars }
 ```
 
 ### Question 7
@@ -135,7 +134,19 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+var post = $.get("post.rb", function(){
+  alert( "Post Retrieved");
+})
+.done (function) {
+  alert("success");
+})
+.fail (function() {
+  alert("error");
+})
+.always(function() {
+  alert("always");
+});
+
 ```
 
 ### Question 8
