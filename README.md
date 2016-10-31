@@ -180,10 +180,19 @@ If the Post creation is successful, the new Post should be printed to the browse
 ```js
 // Your answer goes here...
 $(document).ready(function () {
+  var name = $("#Title").val();
+  var address = $("#Body").val();
         $.ajax({
             url: "http://localhost:3000/posts",
-            type: "Get",
+            type: "PUT",
+            data: JSON.stringify([title, body]),
+
             success: function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    $("
-```
+              alert('Updated Successfully');
+                window.location.href = "../Index";
+            },
+           error: function (msg) { alert(msg); }
+         })
+       })
+     })
+         ```
