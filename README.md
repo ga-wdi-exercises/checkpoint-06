@@ -96,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -105,8 +105,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
-```
+ui-sref is what will let us link to the .state service which is
+what allow us to do refreshs to certain pieces of our code insteadof full page refreshs. ```
 
 ## Part II: APIs
 
