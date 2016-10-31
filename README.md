@@ -15,7 +15,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module('blog', [
+    'ui.router'
+  ])
 ```
 
 ### Question 2
@@ -28,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+There is no difference other than data-ng-click will validate in html5, while ng-click will not
 ```
 
 ### Question 3
@@ -36,7 +39,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A. Declaring your ng-app in the html tag gives your app a wider score (for example, this way you'll be able to manipulate the title)
 ```
 
 #### A
@@ -93,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is a directive provided by ui.router that binds an html link tag to a state. It is used for navigation within your angular app
 ```
 
 ## Part II: APIs
@@ -120,7 +123,16 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts }
+    end
+  end
+end
 ```
 
 ### Question 7
@@ -131,7 +143,18 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+angular
+  .module('blog', [
+    'ngResource'
+  ])
+  .factory( 'postFactory', [
+    '$resource',
+    PostFactoryFunction
+  ])
+
+  function PostFactoryFunction($resource) {
+    return $resource("http://localhost:3000/posts.json")
+  }
 ```
 
 ### Question 8
@@ -144,5 +167,12 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  type: 'POST',
+  url: '/posts',
+  dataType: 'json',data: {
+    title: 'Post title goes here',
+    body: 'Post body goes here'
+  }
+})
 ```
