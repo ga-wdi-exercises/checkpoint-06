@@ -16,6 +16,10 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+angular
+  .module('blog', [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -25,10 +29,13 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```html
 <button ng-click="vm.create()">Click</button>
 <button data-ng-click="vm.create()">Click</button>
+
 ```
 
 ```text
 Your answer goes here...
+
+they are the same thing.
 ```
 
 ### Question 3
@@ -37,6 +44,9 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 
 ```text
 Your answer goes here...
+#### A
+ng-app directives should be placed at the root of an HTML document 
+
 ```
 
 #### A
