@@ -145,7 +145,7 @@ $("button").on("click", () => {
     type: "get",
     dataType: "json"
   }).done(() => {
-    console.log("Ajax request success!")
+    console.log(response)
   }).fail(() => {
     console.log("Ajax request fails!")
   }).always(() => {
@@ -164,5 +164,19 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(".post").on("click", () => {
+  $.ajax({
+    type: 'POST',
+    data: {
+        title: "Limp Bizkit",
+        body: "Rocks!!!!"
+    },
+    dataType: 'json',
+    url: "/artists"
+  }).done((response) =>  {
+    console.log(response);
+  }).fail((response) => {
+    console.log("AJAX POST failed");
+  })
+})
 ```
