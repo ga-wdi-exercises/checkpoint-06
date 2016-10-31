@@ -39,8 +39,8 @@ preference thing.```
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
-```
+Letter A would be the best usage, because it is telling the Document that every thing inside the html file that has ng in it should be treated as an agular command.
+ ```
 
 #### A
 
