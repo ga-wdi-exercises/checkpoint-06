@@ -105,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+The ui-sref directive is a directive that binds a link to a state.  This button is used to distinguish active from inactive links when shown in different states.
 ```
 
 ## Part II: APIs
