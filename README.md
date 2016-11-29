@@ -136,7 +136,15 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$.ajax({
+  url: "http://localhost:3000",
+  type: 'get',
+  dataType: 'json'
+}).done((result) => {
+  console.log(result);
+}).fail(() => {
+  console.log("YOU HAVE FAILED AT UNDERSTANDING AJAX AND JSON!");
+})
 ```
 
 ### Question 8
@@ -149,5 +157,20 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  url: "http://localhost:3000",
+  type: 'post',
+  dataType: 'json',
+  data: {
+    post: {
+      title: "Do I really understand API and AJAX?",
+      body: "I actually really don't LOL."
+    }
+  },
+}).done((post) => {
+  console.log(post);
+}).fail(() => {
+  console.log("YOU HAVE FAILED AT UNDERSTANDING AJAX AND JSON!");
+)
+})
 ```
