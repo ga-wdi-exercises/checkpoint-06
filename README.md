@@ -15,7 +15,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -28,7 +31,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+data-ng-click allows html validation. ng-click simply connects it to an angular model/action
 ```
 
 ### Question 3
@@ -36,7 +39,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A - ng-app should always be inserted in the html file so that angular modules will be available to the entire application
 ```
 
 #### A
@@ -93,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is added to html anchors to give them angular functionality
 ```
 
 ## Part II: APIs
@@ -120,7 +123,10 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to do |format|
+  format.html { render :index }
+  format.json { render json: @posts}
+end
 ```
 
 ### Question 7
@@ -131,7 +137,13 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+http://localhost:3000/posts.json
+
+if @posts {
+  console.log(@posts);
+} else {
+  console.log(@posts.errors);
+}
 ```
 
 ### Question 8
@@ -144,5 +156,18 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+def new
+  @post = Post.new
+end
+
+def create
+  @post = Post.new(post_params)
+  respond_to do |format|
+    if @post.save!
+      console.log(@post);
+    else
+      console.log(@post.errors);
+    end
+  end
+end
 ```
