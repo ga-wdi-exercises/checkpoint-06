@@ -33,7 +33,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-
+they perform
 ```
 
 ### Question 3
@@ -41,7 +41,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A is the best answer because it allows ng-app to be applied throughout the entire web application since it is located within the html tag. Option b will only applied ng-app in the head and Option C will give you an error because it is beneath another angular function(?).
 ```
 
 #### A
