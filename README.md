@@ -120,13 +120,19 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    respond_to: :html, :json
   end
 end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  respond_to: :html, :json
+
+  def index
+    @posts = Post.all
+    respond_with(@posts)
+  end
+end
 ```
 
 ### Question 7
