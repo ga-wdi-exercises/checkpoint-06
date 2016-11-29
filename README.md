@@ -120,6 +120,7 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    respond_to: :html, :json
   end
 end
 ```
@@ -163,8 +164,8 @@ $.ajax({
   dataType: 'json',
   data: {
     post: {
-      title: "Do I really understand API and AJAX?",
-      body: "I actually really don't LOL."
+      title: "AJAX and API",
+      body: "JSON"
     }
   },
 }).done((post) => {
