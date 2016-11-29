@@ -15,7 +15,12 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", ["ui.router"])
+  .config(["$stateProvider", Router])
+
+function Router($stateProvider) {
+}
 ```
 
 ### Question 2
@@ -28,7 +33,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+
 ```
 
 ### Question 3
