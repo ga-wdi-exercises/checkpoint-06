@@ -33,7 +33,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-they perform
+they perform the same function but the only difference is that data-ng-click can pass data as an argument(?) and it can pass HTML validators.
 ```
 
 ### Question 3
