@@ -15,7 +15,13 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module("blog", [
+  "ui.router"]
+])
+  .config([
+    "$stateProvider",
+    RouterFunction
+  ])...
 ```
 
 ### Question 2
@@ -28,7 +34,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They are the same thing. data-ng-click is to make valid html.
 ```
 
 ### Question 3
@@ -36,7 +42,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A for best of using of ng-app. All AngularJS app must have a root element. You can only have one ng-app directive in your HTML.
 ```
 
 #### A
@@ -93,7 +99,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,7 +108,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref directive is used to activate the state. i.e. in HTML,
+<a ui-sref="currentState.state1">Link</a>
 ```
 
 ## Part II: APIs
@@ -120,7 +127,11 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class Post < AppicationRecord
+  has_many :titles
+end  
+
+<% @posts.each do |post| %>  
 ```
 
 ### Question 7
@@ -131,7 +142,15 @@ Let's say the Posts in the previous question are available when you visit `http:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+1. { "posts"" [
+      {"comment": }'
+    '
+  ]
+}
+$("button").on("click"), ()=> {
+  var post = "comments"
+
+}
 ```
 
 ### Question 8
@@ -143,6 +162,6 @@ Using the same front-end application and Rails API from the previous question, h
 
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
-```js
-// Your answer goes here...
+```
+
 ```
