@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+
+angular
+.module("blog",["ui.router"])
+
 ```
 
 ### Question 2
@@ -26,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+There is no major difference it's really a mater of prefernce wheter you want to prefix data or just want to directly use ng for angular.  
 ```
 
 ### Question 3
@@ -34,7 +37,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A is the best choice due to the fact that ng-app defines where you want your application to start.
 ```
 
 #### A
@@ -91,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +103,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+creates links that when clicked directs the user to "/#/" without having to reload the page.
 ```
 
 ## Part II: APIs & AJAX
