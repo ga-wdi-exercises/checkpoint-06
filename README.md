@@ -13,7 +13,8 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog",[ui.router])
 ```
 
 ### Question 2
@@ -26,7 +27,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+Data-ng-click makes sure that it is validated.
 ```
 
 ### Question 3
@@ -34,7 +35,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A is the best because it is in the highest level scope of the three.
 ```
 
 #### A
@@ -91,7 +92,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[THIS ONE] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +101,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It is the angular equivalent of href. It is used for linking in angular.
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +119,9 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+<div ng-repeat="post in vm.posts">
+    <p>{{$index + 1}}. {{post.content}}</p>
+  </div>
 ```
 
 ### Question 7
@@ -129,7 +132,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$.ajax({
+   url: url,
+   type: "get",
+   dataType: "json"
+ }).done(() => {
+   console.log("Ajax request success!")
+ }).fail(() => {
+   console.log("Ajax request fails!")
+ }).always(() => {
+   console.log("This always happens regardless of successful ajax request or not.")
+ })
+})
+
 ```
 
 ### Question 8
@@ -142,5 +157,21 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+   url: url,
+   type: "get",
+   dataType: "json"
+   // $.ajax takes an object as an argument with at least three key-value pairs...
+   // (1) The URL endpoint for the JSON object.
+   // (2) Type of HTTP request.
+   // (3) Datatype. Usually JSON.
+ }).done((response) => {
+   //MAKE AN ITERATOR
+   ('#div').append(//ONE INSTANCE OF THE ITERATOR)
+ }).fail(() => {
+   console.log("Ajax request fails!")
+ }).always(() => {
+   console.log("This always happens regardless of successful ajax request or not.")
+ })
+})
 ```
