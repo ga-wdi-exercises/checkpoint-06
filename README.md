@@ -37,7 +37,7 @@ Both functionally the same, but including data allows it to pass HTML validators
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A - because you are defining the scope of your app and the html tag will incapsulate the entire page.
 ```
 
 #### A
