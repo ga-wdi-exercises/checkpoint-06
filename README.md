@@ -102,7 +102,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-the ui.sref directive is the because using a link that directs to a route location in your application; it also helps to keep the page from refreshing 
+the ui.sref directive is the because using a link that directs to a route location in your application; it also helps to keep the page from refreshing
 ```
 
 ## Part II: APIs & AJAX
@@ -120,7 +120,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all.order(:created_at)
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render json: posts}
+  end
+end
 ```
 
 ### Question 7
@@ -131,7 +138,20 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    // console.log("clicked!");
+    $.ajax({
+      type: "GET",
+      dataType:"json",
+      url: "/posts"
+    }).done((response) => {
+      console.log(response);
+    }).fail(() => {
+      console.log("didn't work");
+    });
+  });
+});
 ```
 
 ### Question 8
@@ -144,5 +164,23 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".post").on("click", () => {
+    $.ajax({
+      type: 'POST',
+      data: {
+        post: {
+          title: "Ajax",
+          body: "Ajax and APIs man"
+        }
+      },
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("AJAX CREATE failed");
+    });
+  });
+});
 ```
