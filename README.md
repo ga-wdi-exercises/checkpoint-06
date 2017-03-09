@@ -13,7 +13,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module('blog', [ui.router]);
 ```
 
 ### Question 2
@@ -27,6 +27,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 ```text
 Your answer goes here...
+They have the same functionality by ng-dataclick will pass an HTML validation test whilst ng-click will not.
 ```
 
 ### Question 3
@@ -34,7 +35,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A is the best choice. Placing it on the html tag ensures that the entire document is ready to have angular placed into it.
 ```
 
 #### A
@@ -91,7 +92,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ x ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +101,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is a directive that binds an <a> tag to a state. It automatically updates and generates a change to the URL when needed.
+
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +120,8 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+format.html
+format.json { render json: @cars }
 ```
 
 ### Question 7
@@ -129,7 +132,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+var post = $.get("post.rb", function(){
+  alert( "Post Retrieved");
+})
+.done (function) {
+  alert("success");
+})
+.fail (function() {
+  alert("error");
+})
+.always(function() {
+  alert("always");
+});
+
 ```
 
 ### Question 8
