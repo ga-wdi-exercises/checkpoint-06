@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -26,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+No difference
 ```
 
 ### Question 3
@@ -34,7 +37,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A.  NG docs and coding conventions suggest keeping it in <html
 ```
 
 #### A
@@ -91,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +103,12 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref points to a <<state>> or route/resource/destination .... uses ui-router to pass parms to controller, kinda like this:
+""<a ui-sref="home({foo: 'fooVal', bar: 'barVal'})">Go to home state with foo and bar parameters </a>
+
+"directive that binds a link (<a> tag) to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method. Clicking the link will trigger a state transition with optional parameters.
+"example:
+<a href="#/home" ui-sref="home">Home</a> | <a href="#/about" ui-sref="about">About</a> | <a href="#/contacts?page=2" ui-sref="{page: 2}">Next page</a>
 ```
 
 ## Part II: APIs & AJAX
@@ -115,10 +123,16 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 end
+
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    render json: posts
+  end
+end
 ```
 
 ### Question 7
@@ -129,7 +143,18 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all;
+    render json: posts;
+    if(@posts) {
+      console.log(@posts);
+    }
+    else {
+      console.log ('hi, im an error.');
+    }
+  end
+end
 ```
 
 ### Question 8
@@ -142,5 +167,17 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+
+                 $.ajax({
+                     url: 'http://localhost:3000/posts',
+                     type: 'POST',
+                     dataType: 'json',
+                     data: person,
+                     success: function (title, body) {
+                         console.log(data);
+                     },
+                     error: function (title, body, errorThrown) {
+                         console.log('Error in Operation');
+                     }
+                 });
 ```
