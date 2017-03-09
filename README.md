@@ -126,7 +126,15 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @posts}
+    end
+  end
+end
 ```
 
 ### Question 7
@@ -137,7 +145,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$.ajax({
+  url: "http://localhost:3000/posts",
+  type: "get",
+  dataType: "json"
+}).done((response) => {
+  console.log(response)
+}).fail(() => {
+  console.log("Sorry, buddyboo. Your ajax request failed.")
+})
 ```
 
 ### Question 8
