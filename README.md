@@ -121,7 +121,16 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @posts}
+    end
+  end
+end
 ```
 
 ### Question 7
