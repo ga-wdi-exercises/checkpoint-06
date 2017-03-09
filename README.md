@@ -13,7 +13,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -26,7 +26,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They do the same thing, but `data-ng-click` will pass an HTML validator, whereas `ng-click` will not.
 ```
 
 ### Question 3
@@ -34,7 +34,11 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A is the best. It is always best to put the `data-ng-app` directive in the <html> opening tag. This tells Angular that the entire page is an Angular app.
+
+B only makes the head an Angular app. It is not clear what purpose this could possibly serve. More importantly, it puts the `data-ui-sref` directive in the body outside of the scope of the Angular app. This is going to break.
+
+C also puts the `data-ui-sref` directive in the body outside of the scope of the Angular app. In this case, though, the `data-ng-app` directive has even narrower scope.
 ```
 
 #### A
@@ -91,7 +95,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +104,11 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+The `ui-sref` directive is very similar to HTML's `href` attribute. However, whereas `href` takes a good old-fashioned URL and points the tag to that URL, `ui-sref` takes the name of a state within its own Angular app and points the tag to that state.
+
+Examples:
+  `<a href="www.google.com"></a>`
+  `<a ui-sref="grumblesIndex"></a>`
 ```
 
 ## Part II: APIs & AJAX
