@@ -14,6 +14,8 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+angular
+  .module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -26,7 +28,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They perform the same function, but only 'data-ng-click' will pass HTML validation.
 ```
 
 ### Question 3
@@ -34,7 +36,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+I would go with option A because it's the only one that will include the entire body as the root of the application.
 ```
 
 #### A
@@ -91,7 +93,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +102,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+'ui-sref' is used in place of 'href' in 'a' tags and binds a state to a link.  Links can include parameters if needed (such as ':id' for a specific instance).
 ```
 
 ## Part II: APIs & AJAX
@@ -119,6 +121,17 @@ end
 
 ```rb
 # Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts }
+    end
+
+  end
+end
 ```
 
 ### Question 7
@@ -130,6 +143,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
 
 ```js
 // Your answer goes here...
+$.ajax({
+   url: "http://localhost:3000/posts",
+   type: "get",
+   dataType: "json"
+ }).done((response) => {
+   console.log(response)
+ }).fail(() => {
+   console.log("Ajax request fails!")
+ })
 ```
 
 ### Question 8
@@ -143,4 +165,19 @@ If the Post creation is successful, the new Post should be printed to the browse
 
 ```js
 // Your answer goes here...
+$.ajax({
+  type: 'POST',
+  data: {
+    post: {
+      title: "This Is My Post",
+      body: "This is my first post do you like it do you like my post do you want to read more of my posts so many posts lol"
+    }
+  },
+  dataType: 'json',
+  url: "/posts"
+}).done((response) =>  {
+  console.log(response);
+}).fail((response) => {
+  console.log("AJAX POST failed");
+})
 ```
