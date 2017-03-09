@@ -122,7 +122,10 @@ end
 
 ```rb
 # Your answer goes here.
-render json: @posts
+respond_to do |format|
+  format.html { render :index }
+  format.json { render json: @posts }
+end
 ```
 
 ### Question 7
