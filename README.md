@@ -13,7 +13,8 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+Angular
+  .module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -25,16 +26,14 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 <button data-ng-click="vm.create()">Click</button>
 ```
 
-```text
-Your answer goes here...
+```ng-click only allows you to specify a behavior when you click on an element, data-ng-click will pass data to the method when you click the object.
 ```
 
 ### Question 3
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
-```text
-Your answer goes here...
+```A-- the app directive should to be declared in a place that reflects the scope of the app.
 ```
 
 #### A
@@ -92,15 +91,15 @@ Which one of the following concepts does this best illustrate?
 [ ] A: Modularity
 [ ] B: MVC
 [ ] C: Two-way data-binding
-[ ] D: Separation of concerns
+[X] D: Separation of concerns
 ```
 
 ### Question 5
 
 What is the `ui-sref` directive, and how is it used?
 
-```text
-Your answer goes here...
+```
+it stands for ui-router state reference and allows you to binds the link to a state and change the state parameters.  
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +117,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @grumbles }
+  end
+end
 ```
 
 ### Question 7
@@ -129,7 +135,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("There was an error retrieving the request");
+    })
+  })
+})..
 ```
 
 ### Question 8
@@ -142,5 +160,28 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
-```
+
+// in the app/controllers/post_controller.rb
+def test_ajax
+  @posts = Post.all
+end
+
+$(document).ready(()=>{
+  $(".post").on("click", () => {
+    $.ajax({
+      type: 'POST',
+      data: {
+        post: {
+          Title: "Stuff",
+          body: "Eggs, cheese, bread, ham, pizza"
+        }
+      },
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("AJAX POST failed");
+    })
+  })
+})
