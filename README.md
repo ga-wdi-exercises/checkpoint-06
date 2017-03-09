@@ -101,7 +101,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+it depends on ui-router and it is used a link in angular similar to link_to in rails.
 ```
 
 ## Part II: APIs & AJAX
@@ -114,12 +114,15 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+
   end
 end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to do |format|
+format.html{render :index}
+format.json{ render json: @posts}
 ```
 
 ### Question 7
@@ -130,7 +133,18 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+var url = "http://localhost:3000/posts.json"
+  $.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+  }).done((response) => {
+    console.log(response)
+  }).fail(() => {
+    console.log("Ajax request fails!")
+  })
+ 
+})
 ```
 
 ### Question 8
@@ -143,5 +157,24 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+var url = "http://localhost:3000/posts.json"
+$(document).ready(()=>{
+  $(".post").on("click", () => {
+    $.ajax({
+      type: 'POST',
+      data: {
+        artist: {
+          title = title
+          body = body
+        }
+      },
+      dataType: 'json',
+      url: "/artists"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("AJAX POST failed");
+    })
+  })
+})
 ```
