@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -26,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+HTML validators do not recognize 'ng' directives. However, with 'data' in front of them, they are ignored and are able to validate correctly.
 ```
 
 ### Question 3
@@ -34,7 +37,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A is the best option, as it encompasses the entire HTML. It is possible to use body tag or just a div tag for the ng-app directive, but it's not recommended, as some stuff may unintentionally be left outside Angular app.
 ```
 
 #### A
@@ -91,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +103,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It's similar to a helper method 'link_to' in Rails, and it's just how Angular(with ui.router as dependency) handles links.
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +121,15 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.html { render json: @posts }
+      format.json { render json: @posts }
+    end
+  end
+end
 ```
 
 ### Question 7
