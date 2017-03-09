@@ -146,13 +146,13 @@ Let's say the Posts in the previous question are available at `http://localhost:
 
 ```js
 $.ajax({
-  url: "http://localhost:3000/posts",
-  type: "get",
-  dataType: "json"
-}).done((response) => {
+  url: 'http://localhost:3000/posts',
+  type: 'get',
+  dataType: 'json'
+}).done(response => {
   console.log(response)
 }).fail(() => {
-  console.log("Sorry, buddyboo. Your ajax request failed.")
+  console.log('Something went wrong with your AJAX request. Sorry.')
 })
 ```
 
@@ -166,5 +166,17 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  url: 'http://localhost:3000/posts',
+  type: 'post',
+  dataType: 'json',
+  data: {
+    title: 'How specific is "AJAX"?',
+    body: 'For example, is it still called "AJAX" when Angular does it?'
+  }
+}).done(response => {
+  console.log(response)
+}).fail(() => {
+  console.log('Something went wrong with your AJAX post. Sorry.')
+})
 ```
