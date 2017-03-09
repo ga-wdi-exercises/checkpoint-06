@@ -1,10 +1,8 @@
-# Week 08
-
 ## Instructions
 
 1. Fork this repo
 - Clone your fork
-- Fill in your answers by writing the appropriate area, or placing an 'x' in the square brackets for multiple-choice questions
+- Fill in your answers by writing the appropriate area or placing an 'x' in the square brackets for multiple-choice questions
 - Add/Commit/Push your changes to Github
 - Open a pull request
 
@@ -86,7 +84,7 @@ Your answer goes here...
 
 ### Question 4
 
-Imagine an app in which a change to the view updates the model without a page refresh, and a change to the model updates the view without a page refresh.
+Imagine an app in which a change to the view updates the model without a page refresh. Similarly, a change to the model updates the view without a page refresh.
 
 Which one of the following concepts does this best illustrate?
 
@@ -105,7 +103,7 @@ What is the `ui-sref` directive, and how is it used?
 Your answer goes here...
 ```
 
-## Part II: APIs
+## Part II: APIs & AJAX
 
 ### Question 6
 
@@ -125,7 +123,7 @@ end
 
 ### Question 7
 
-Let's say the Posts in the previous question are available when you visit `http://localhost:3000`. In a front-end application, how could you do the following using jQuery...
+Let's say the Posts in the previous question are available at `http://localhost:3000/posts`. In a front-end application, how could you do the following using AJAX?
   1. Retrieve all the posts in JSON form
   2. If Step 1 is successful, print the resulting JSON to the console
   3. If Step 1 is unsuccessful, print an error message to the console
@@ -136,7 +134,7 @@ Let's say the Posts in the previous question are available when you visit `http:
 
 ### Question 8
 
-Using the same front-end application and Rails API from the previous question, how would you use jQuery to create a Post through the API? You can assume the following...
+Using the same front-end application and Rails API from the previous question, how would you use AJAX to create a Post through the API? You can assume the following...
 * The API is RESTful
 * The `PostsController` contains a strong params method that is used when creating an instance of the `Post` model
 * Each Post has `title` and `body` attributes, both of which are strings
