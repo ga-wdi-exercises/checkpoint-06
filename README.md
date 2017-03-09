@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+  .module("blog", [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -26,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+If you want to use an HTML validator you need to use data-ng-click.
 ```
 
 ### Question 3
@@ -34,7 +37,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A. When you place it at the root in HTML it will get loaded immediately.
 ```
 
 #### A
@@ -91,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +103,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+This binds a link tag to a state. You use ui-sref='stateName' to navigate to a state with no params and
+ui-sref='stateName({param: value, param: value})' with params.
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +122,15 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+def index
+  @posts = Post.all
+
+  respond_to do |format|
+    format.html { render :index }
+  end
+end
+
+
 ```
 
 ### Question 7
@@ -129,7 +141,14 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+def index
+  @posts = Post.all
+
+  respond_to do |format|
+  if @post.save!
+    format.json { render json: @posts }
+  end
+end
 ```
 
 ### Question 8
