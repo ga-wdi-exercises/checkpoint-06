@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+.module ("blog",
+["ui.router"]
+)
 ```
 
 ### Question 2
@@ -26,15 +29,26 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+there is no difference interms of functionality but the only difference is that data-ng-click will pass through an html-validator while ng-click fails
+
+[from angular docs on directives]
+Directives have camel cased names such as ngBind. The directive can be invoked by translating the camel case name into snake case with these special characters :, -, or _.
+
+Optionally the directive can be prefixed with x-, or data- to make it HTML validator compliant. Here is a list of some of the possible directive names: ng:bind, ng-bind, ng_bind, x-ng-bind and data-ng-bind.
+
 ```
 
 ### Question 3
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
-```text
-Your answer goes here...
+```
+all three can work without an error.
+It kinda depends on the developer and the scope of the angular application that the developer wants to hava access to.
+but you can't call data-ui-sref outside the scope.
+
+#### A - demonstrates the better  use of ng-app directive for a developer that wants to have access of the directive as the element that ng-app is attached to will define the scope of the control of the angular application.This directive designates the root element of the application and should be placed to the root element of the html page which is near the root element of the page. e.g. <body> or <html>
+      they all will work but in the B and C we still get the html element <h1>my App</h1> printed out but without a link
 ```
 
 #### A
@@ -91,7 +105,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +114,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+it's basically a link which helps change the view of your single page angular application depending on the state of your angular application without http request. no hard refresh,which makes it seamless for building great user interfaces and faster applications
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +132,18 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+     respond_to do  |format|
+
+       format.html { render html: @posts}
+       format.json { render json: @posts}
+
+     end
+  end
+end
 ```
 
 ### Question 7
@@ -129,7 +154,20 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$.ajax({
+  //on click use that IMDb value to look for a json data
+  url: `http://localhost:3000/posts`,
+  type: 'get',
+  dataType: 'json',
+}).done(response =>{
+  console.log(response);
+}).fail(() => {
+  console.log("Ajax request fails!")
+
+}).always(() => {
+  console.log("This always happens regardless of successful ajax request or not.")
+})
+}
 ```
 
 ### Question 8
@@ -142,5 +180,25 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+
+
+    $.ajax({
+       type: 'POST',
+       dataType: 'json',
+       url: "http://localhost:3000",
+       data: {
+       post: {
+           title: "How to look cool while wearing glasses",
+           body: "I have always looked cool with glasses it's the best look there is."
+
+        }
+     }
+    }).done((response) => {
+      console.log(response);
+    }).fail(() => {
+      console.log("Failed to create.");
+    })
+
+
+
 ```
