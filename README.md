@@ -29,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+Both functionally the same, but including data allows it to pass HTML validators.
 ```
 
 ### Question 3
