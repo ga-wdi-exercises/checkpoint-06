@@ -13,7 +13,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module("blogApp", ["ui.router"])
 ```
 
 ### Question 2
@@ -26,7 +26,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+There is no difference between the two except that certain HTML5 validators will throw an error on a property like ng-click, but they don't throw an error for anything prefixed with data-, like data-ng-click. So it is preferred to use the data- prefix with angular directives.
 ```
 
 ### Question 3
@@ -34,7 +34,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Answer "A" demonstrates the best usage because the ng-app directive should always appear in your opening HTML tag in order to indicate to the browser that the entire document will be Angular. In the other positions, you may not get an error, but your Angular content is unlikely to render correctly in the browser.
 ```
 
 #### A
@@ -91,7 +91,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +100,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+data-ui-sref (AKA u-sref) is an angular directive that generates a home view/state link, returning you to (usually) the index state of your app. However, it can be set to return to any state that is desired.
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +118,15 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+  respond_to do |format|
+    format.html { render :index }
+    format.json { render json: @posts }
+  end
+end
 ```
 
 ### Question 7
@@ -129,7 +137,16 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
+  $.ajax({
+    url: "http://localhost:3000/",
+    type: "get",
+    dataType: "json"
+  }).done((response) => {
+    console.log(response)
+  }).fail(() => {
+    console.log("Error: data request unsuccessful")
+  })
 ```
 
 ### Question 8
@@ -142,5 +159,15 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  type: 'POST',
+  data: {post: {title: "test_title", body: "test_body"}},
+  dataType: 'json',
+  url: "/artists"
+}).done((response) =>  {
+  console.log(response);
+}).fail(() => {
+  console.log("New post creation failed");
+})
+
 ```
