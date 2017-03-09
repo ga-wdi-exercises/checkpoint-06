@@ -13,7 +13,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -26,7 +26,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They do the same thing but most HTML validators will require the "data" prefix to pass for validation.
 ```
 
 ### Question 3
@@ -34,7 +34,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A because the ng-app always goes in the HTML tag to let the document know it is going to be an ng-app with the name of "***" so it can read it from the js files as well.
 ```
 
 #### A
@@ -90,7 +90,7 @@ Which one of the following concepts does this best illustrate?
 
 ```
 [ ] A: Modularity
-[ ] B: MVC
+[X] B: MVC
 [ ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
@@ -100,7 +100,9 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+It redirects to a new route without reloading the page, similar to href in HTML.
+
+FROM LESSON: "data-ui-sref: This creates a link that, when clicked, directs the user to #/grumbles without reloading the page."
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +120,26 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+FROM API AND AJAZ LESSON
+
+$("button").on("click", () => {
+  var url = "https://api.wunderground.com/api/your_key/geolookup/conditions/q/va/midlothian.json"
+  $.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+    // $.ajax takes an object as an argument with at least three key-value pairs...
+    // (1) The URL endpoint for the JSON object.
+    // (2) Type of HTTP request.
+    // (3) Datatype. Usually JSON.
+  }).done(() => {
+    console.log("Ajax request success!")
+  }).fail(() => {
+    console.log("Ajax request fails!")
+  }).always(() => {
+    console.log("This always happens regardless of successful ajax request or not.")
+  })
+})
 ```
 
 ### Question 7
@@ -129,7 +150,24 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$("button").on("click", () => {
+  var url = "http://localhost:3000/posts"
+  $.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+    // $.ajax takes an object as an argument with at least three key-value pairs...
+    // (1) The URL endpoint for the JSON object.
+    // (2) Type of HTTP request.
+    // (3) Datatype. Usually JSON.
+  }).done(() => {
+    console.log(json)
+  }).fail(() => {
+    console.log("Ajax request fails!")
+  }).always(() => {
+    console.log("This always happens regardless of successful ajax request or not.")
+  })
+})
 ```
 
 ### Question 8
