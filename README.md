@@ -13,7 +13,13 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+ngular
+.module("blog", ["ui.router"])
+.config(["$stateProvider", RouterFunction])
+
+function RouterFunction($stateProvider){
+  console.log('Router setup correctly')
+}
 ```
 
 ### Question 2
@@ -26,7 +32,8 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+Its matter of preference whether you want to prefix data or directly want to use ng for angularjs.
+
 ```
 
 ### Question 3
@@ -91,7 +98,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -99,9 +106,9 @@ Which one of the following concepts does this best illustrate?
 
 What is the `ui-sref` directive, and how is it used?
 
-```text
-Your answer goes here...
-```
+A directive that binds a link (<a> tag) to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method.
+
+
 
 ## Part II: APIs & AJAX
 
