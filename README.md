@@ -121,7 +121,13 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+{
+  "posts": [
+    {"title": "Can I Live By Jay Z", "id": 1},
+    {"title": "This Can't Be Life By Jay Z", "id": 2},
+    {"title": "Show Me What You Got By Jay Z", "id": 3},
+    {"title": "Hard Knock Life By Jay Z", "id": 4},
+    ]}
 ```
 
 ### Question 7
