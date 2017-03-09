@@ -103,7 +103,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+Basically a link tag for Angular, it's used to change states or go to another part of the application, without refreshing the page, which a regular a tag would do.
 ```
 
 ## Part II: APIs & AJAX
