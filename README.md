@@ -119,7 +119,7 @@ class PostsController < ApplicationController
 end
 ```
 ```rb
- # app/views/index/test_ajax.html.erb 
+ # app/views/index/test_ajax.html.erb
 
 <div class="get">AJAX GET!</div>
 <div class="post">AJAX POST!</div>
@@ -167,12 +167,15 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-}).done(() => {
-    console.log("Ajax request success!")
-  }).fail(() => {
-    console.log("Ajax request fails!")
-  }).always(() => {
-    console.log("This always happens regardless of successful ajax request or not.")
-  })
-})
+
+.controller("PostShowController", [
+   "PostController",
+   "$stateParams",
+   PostShowControllerFunction
+ ]);
+
+ function PostShowControllerFunction(PostController, $stateParams){
+   this.post = postController.get({id: $stateParams.id});
+ }
+
 ```
