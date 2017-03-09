@@ -133,6 +133,25 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
+$("button").on('click', () => {
+  let = "http://localhost:3000/posts"
+
+  $.ajax({
+    url: url,
+    type: "GET",
+    dataType: "json"
+  })
+    .done((response) => {
+      console.log(response);
+    })
+    .fail(() => {
+      console.log("Ajax failed");
+    })
+    .always(() => {
+      console.log("This always happens");
+    })
+})
+
 // Your answer goes here...
 ```
 
