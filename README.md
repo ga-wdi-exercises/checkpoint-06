@@ -138,7 +138,7 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
 ```
 
 ### Question 8
@@ -151,5 +151,17 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Ajax get request failed.");
+    })
+  })
+})
 ```
