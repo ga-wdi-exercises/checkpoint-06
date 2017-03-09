@@ -91,7 +91,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +100,10 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+A ui-sref is a directive that binds a link to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method. Clicking the link will trigger a state transition with optional parameters.
+
+Example:
+<a ui-sref="home">Home</a> | <a ui-sref="about">About</a> etc.
 ```
 
 ## Part II: APIs & AJAX
