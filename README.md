@@ -165,5 +165,28 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
+("button").on('click', () => {
+  let = "http://localhost:3000/posts"
+
+  $.ajax({
+    url: url,
+    type: "GET",
+    dataType: "json"
+  })
+    .done((response) => {
+      $('body').append("<div></div>")
+      $('div').append("<h2></h2>")
+      $('div').append("<p></p>")
+      $('h2').text("${post.title}")
+      $('p').text("${post.body}")
+
+    })
+    .fail(() => {
+      console.log("Ajax failed");
+    })
+    .always(() => {
+      console.log("This always happens");
+    })
+})
 // Your answer goes here...
 ```
