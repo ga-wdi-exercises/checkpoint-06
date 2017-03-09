@@ -13,7 +13,7 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular.module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -26,7 +26,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+They are the same thing. You can use data-ng-click to make a valid html.
 ```
 
 ### Question 3
@@ -34,7 +34,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A! I believe this is the best option because it establishes the domain of our Angular application.
 ```
 
 #### A
@@ -91,7 +91,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,7 +100,10 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+A ui-sref is a directive that binds a link to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method. Clicking the link will trigger a state transition with optional parameters.
+
+Example:
+<a ui-sref="home">Home</a> | <a ui-sref="about">About</a> etc.
 ```
 
 ## Part II: APIs & AJAX
@@ -118,7 +121,13 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+{
+  "posts": [
+    {"title": "Can I Live By Jay Z", "id": 1},
+    {"title": "This Can't Be Life By Jay Z", "id": 2},
+    {"title": "Show Me What You Got By Jay Z", "id": 3},
+    {"title": "Hard Knock Life By Jay Z", "id": 4},
+    ]}
 ```
 
 ### Question 7
@@ -129,7 +138,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Ajax get request failed.");
+    })
+  })
+})
 ```
 
 ### Question 8
@@ -142,5 +163,17 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Ajax get request failed.");
+    })
+  })
+})
 ```
