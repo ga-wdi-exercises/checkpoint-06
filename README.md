@@ -121,7 +121,8 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+# Your answer goes here.
+render json: @posts
 ```
 
 ### Question 7
