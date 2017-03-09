@@ -92,10 +92,10 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
-
+C. is my answer.
 ### Question 5
 
 What is the `ui-sref` directive, and how is it used?
@@ -120,7 +120,7 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to :html, :js
 ```
 
 ### Question 7
@@ -131,7 +131,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+format.json { render json: @posts }
+
+$.ajax({
+  data: $(formlogin).serialize(),
+  dataType: 'json'
+  success: function(msg)
+  console.log("success" + msg)
+  error: function(req, err){ console.log('error message' + err)}
+})
 ```
 
 ### Question 8
@@ -144,5 +152,16 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(".post").on("click", () => {
+  $.ajax({
+    type: 'POST',
+    data: {
+      title: "quiz"
+      body: "checkpoint -06"
+    }
+  }
+  dataType: 'json'
+  })
+}
+This question was a struggle.
 ```
