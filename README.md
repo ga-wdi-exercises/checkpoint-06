@@ -139,9 +139,6 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-$(document).ready(() => {
-  $(".get").on("click", () => {
-
 
       $.ajax({
         type: "GET",
@@ -153,9 +150,6 @@ $(document).ready(() => {
         console.log("AJAX get request failed!")
       })
 
-    })
-
-  })
 
 ```
 
