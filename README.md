@@ -138,7 +138,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) =>  {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Ajax get request failed.");
+    })
+  })
+})
 ```
 
 ### Question 8
