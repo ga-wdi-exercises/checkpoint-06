@@ -29,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+ When putting in our html to a validator it will throw an error with ng-click but adding the data tag to it the validator will pass over it. Anything with a data tag will be skipped by a validator
 ```
 
 ### Question 3
@@ -37,7 +37,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+A because it covers the whole html document.
 ```
 
 #### A
