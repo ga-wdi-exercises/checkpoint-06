@@ -13,6 +13,9 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
+
+angular
+  .module("blog", ["ui.router"])
 // Your answer goes here...
 ```
 
@@ -26,6 +29,8 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
+There is no difference syntactically between data-ng-click and ng-click.
+
 Your answer goes here...
 ```
 
@@ -34,6 +39,8 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
+*** A **** Best practices for overall use of ng-app is in the HTML Tag for use throughout the entire page.
+
 Your answer goes here...
 ```
 
@@ -90,7 +97,7 @@ Which one of the following concepts does this best illustrate?
 
 ```
 [ ] A: Modularity
-[ ] B: MVC
+[X] B: MVC <== Answer
 [ ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
@@ -100,6 +107,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
+It is used to create a link for each object and redirect/route a page.
+
 Your answer goes here...
 ```
 
@@ -118,6 +127,9 @@ end
 ```
 
 ```rb
+respond_to do |format|
+      format.html { render json: @posts}
+      format.json { render json: @posts}
 # Your answer goes here...
 ```
 
@@ -129,6 +141,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
+
+let url = `http://localhost:3000/posts`
+$.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+  }).done((response) => {
+    console.log(dataType);
+  }).fail((response) => {
+    console.log("FAILURE");
+  })
+
+
 // Your answer goes here...
 ```
 
@@ -142,5 +167,21 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
+let url = `http://localhost:3000/posts`
+$.ajax({
+    url: url,
+    type: "get",
+    data: {
+        post: {
+          title: "POST #1",
+          body: "Body #1"
+        }
+      },
+  }).done((response) => {
+    console.log(dataType);
+  }).fail((response) => {
+    console.log("FAILURE");
+  })
+
 // Your answer goes here...
 ```
