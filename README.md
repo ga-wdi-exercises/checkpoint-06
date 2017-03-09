@@ -156,7 +156,7 @@ Let's say the Posts in the previous question are available at `http://localhost:
       dataType: "json"
     }).done((response) => {
       console.log(response);
-    }).fail(() => {
+    }).fail((response) => {
       console.log("Oh noes! Something went wrong!");
     })
   })
@@ -176,5 +176,37 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+
+//IN JS File
+
+$(document).ready(() =>{
+  $(".post").on("click", () => {
+
+    let title = $(".title").val()
+    let body = $(".body").val()
+
+    $.ajax({
+      type: "POST",
+      data: {
+        post: {
+          title: title,
+          body: body
+        }
+      },
+      dataType: "json",
+      url: "/posts"
+    }).done((response) => {
+      console.log(response);
+    }).fail(() => {
+      console.log("Oh noes! Something went wrong!");
+    })
+  })
+})
+
+//In Viewfile
+  <label>Title:</label>
+  <input class="title" type="text">
+  <label>Content:</label>
+  <input class="body" type="text">
+
 ```
