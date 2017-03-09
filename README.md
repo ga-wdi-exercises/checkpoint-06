@@ -13,7 +13,10 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+angular
+.module("blog", [
+  "ui.router"
+])
 ```
 
 ### Question 2
@@ -26,16 +29,16 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
-```
+There is no diffrence in between the two! I guess its more o a
+preference thing.```
 
 ### Question 3
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
-```
+Letter A would be the best usage, because it is telling the Document that every thing inside the html file that has ng in it should be treated as an agular command.
+ ```
 
 #### A
 
@@ -91,7 +94,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -100,8 +103,8 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
-```
+ui-sref is what will let us link to the .state service which is
+what allow us to do refreshs to certain pieces of our code insteadof full page refreshs. ```
 
 ## Part II: APIs & AJAX
 
@@ -118,8 +121,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
-```
+def index
+  @posts = Post.all
+respond_to do |format|
+   format.html
+   format.json{
+   end
+ end
+   }```
 
 ### Question 7
 
@@ -129,7 +138,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+
+
+$.getJSON( "index.html", {} )
+  .done(function( json ) {
+    console.log( "JSON Data:()");
+  })
+  .fail(function() {
+    console.log( "error, couldn't retrieve .json data." );
+});
 ```
 
 ### Question 8
@@ -142,5 +159,10 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+  $("psot").click
+    $.ajax({
+      type: "POST",
+      url: "/index",
+      data: { product: { title: "someTitle", body: "someBody" } },
+  })
 ```
