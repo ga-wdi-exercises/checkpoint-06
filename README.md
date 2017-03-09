@@ -27,7 +27,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+data-ng-click when run through an HTML validator will not return as an error.
 ```
 
 ### Question 3
@@ -35,7 +35,7 @@ Your answer goes here...
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+######## A
 ```
 
 #### A
@@ -92,7 +92,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -101,7 +101,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+ui-sref is a state reference which allows us to attach it to a link that will connect to a certain state without reloading the page.
 ```
 
 ## Part II: APIs & AJAX
@@ -119,7 +119,16 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts}
+    end
+  end
+end
 ```
 
 ### Question 7
@@ -130,7 +139,24 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$(document).ready(() => {
+  $(".get").on("click", () => {
+
+
+      $.ajax({
+        type: "GET",
+        dataType: 'json',
+        url: "http://localhost:3000/posts"
+      }).done((response) => {
+        console.log(response);
+      }).fail((response) => {
+        console.log("AJAX get request failed!")
+      })
+
+    })
+
+  })
+
 ```
 
 ### Question 8
@@ -143,5 +169,24 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(document).ready(()=> {
+  $(".post").on("click", () => {
+    $.ajax({
+      type: "POST",
+      data: {
+        post: {
+          title: title,
+          body: body
+        }
+      },
+      dataType: 'json',
+      url: "http://localhost:3000/posts"
+    })
+  }).done((response) => {
+    console.log(response);
+  }).fail(() => {
+    console.log("Failed to create new post.")
+  })
+})
+
 ```
