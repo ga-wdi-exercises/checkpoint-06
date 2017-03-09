@@ -102,7 +102,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-`ui-sref` is a directive that binds a link to a state.
+ui-sref is a directive that binds a link to a state. It is placed inside a tag in which we wish to create the link.
 ```
 
 ## Part II: APIs & AJAX
@@ -120,7 +120,14 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.html {render json: @posts}
+      format.json (render json: @posts)
+  end
+end
 ```
 
 ### Question 7
@@ -131,7 +138,19 @@ Let's say the Posts in the previous question are available at `http://localhost:
   3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
-// Your answer goes here...
+$(document).ready(()=> {
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) => {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Request Failed")
+    })
+  })
+})
 ```
 
 ### Question 8
@@ -144,5 +163,27 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(document).ready(() => {
+  $(".post").on("click", () => {
+
+    let title = $(".title").val()
+    let body = $(".body").val()
+
+    $.ajax({
+      type: 'POST',
+      data: {
+        post: {
+          title: title,
+          body: body
+        }
+      },
+      dataType: 'json',
+      url: "/posts"
+    }).done((response) => {
+      console.log(response);
+    }).fail((response) => {
+      console.log("Failed to create");
+    })
+  })
+})
 ```
