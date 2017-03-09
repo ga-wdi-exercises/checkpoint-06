@@ -126,7 +126,8 @@ end
 ```
 
 ```rb
-# really confused on what is being asked here in terms of how to build it out in ruby
+format.html{render :index}
+format.json{ render json: @posts}
 ```
 
 ### Question 7
