@@ -103,7 +103,7 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+it is the angular equivalent to href it is used for pictures and linking to other pages
 ```
 
 ## Part II: APIs & AJAX
