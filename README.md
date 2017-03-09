@@ -123,7 +123,7 @@ end
 
 ### Question 7
 
-Let's say the Posts in the previous question are available when you visit `http://localhost:3000`. In a front-end application, how could you do the following using jQuery...
+Let's say the Posts in the previous question are available at `http://localhost:3000`, under conventional Rails routes. In a front-end application, how could you do the following using jQuery...
   1. Retrieve all the posts in JSON form
   2. If Step 1 is successful, print the resulting JSON to the console
   3. If Step 1 is unsuccessful, print an error message to the console
