@@ -162,23 +162,18 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-$.ajax({
-  type: 'POST',
-  dataType: 'json',
-  url: "/posts"
-  templateURL: "js/ng-views/new.html"
-  controller: "PostsController"
-  controllerAs: "vm"
-}).done((response) =>  {
-  PostsNewControllerFunction
-}).fail((response) => {
-  console.log("Ajax get request failed");
-})
+$(".post").on(click, ()=> {
+  let title = $(".title").val()
+  let body = $(".body").val()
 
-function PostsNewControllerFunction(GrumbleFactory){
-  this.post = new GrumbleFactory();
-  this.create = function (){
-    this.post.$save()
-  }
-}
+  $.ajax({
+    type: 'POST',
+    dataType: 'json',
+    url: "/posts"
+  }).done((response) =>  {
+    PostsNewControllerFunction
+  }).fail((response) => {
+    console.log("Ajax get request failed");
+  })
+})
 ```
