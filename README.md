@@ -14,6 +14,10 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+angular
+  .module('blog', [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -23,10 +27,13 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```html
 <button ng-click="vm.create()">Click</button>
 <button data-ng-click="vm.create()">Click</button>
+
 ```
 
 ```text
 Your answer goes here...
+
+they are the same thing.
 ```
 
 ### Question 3
@@ -35,6 +42,9 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 
 ```text
 Your answer goes here...
+#### A
+ng-app directives should be placed at the root of an HTML document
+
 ```
 
 #### A
@@ -91,7 +101,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -101,6 +111,7 @@ What is the `ui-sref` directive, and how is it used?
 
 ```text
 Your answer goes here...
+A directive that binds a link (<a> tag) to a state. If the state has an associated URL, the directive will automatically generate & update the href attribute via the $state.href() method. Clicking the link will trigger a state transition with optional parameters.
 ```
 
 ## Part II: APIs & AJAX
@@ -113,12 +124,18 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts}
   end
 end
 ```
 
 ```rb
 # Your answer goes here...
+respond_to do |format|
+  format.html { render :index }
+  format.json { render json: @posts}
 ```
 
 ### Question 7
@@ -130,6 +147,23 @@ Let's say the Posts in the previous question are available at `http://localhost:
 
 ```js
 // Your answer goes here...
+  1.$.post( "ajax/test.html", function( data ) {
+    $( ".result" ).html( data );
+  });
+    .var jqxhr = $.post( "example.php", function() {
+      alert( "success" );
+    })
+  2. .done(function() {
+        alert( "second success" );
+      })
+  3..fail(function() {
+        alert( "error" );
+      })
+      .always(function() {
+        alert( "finished" );
+      });
+
+
 ```
 
 ### Question 8
@@ -143,4 +177,20 @@ If the Post creation is successful, the new Post should be printed to the browse
 
 ```js
 // Your answer goes here...
-```
+$(document).ready(function () {
+  var name = $("#Title").val();
+  var address = $("#Body").val();
+        $.ajax({
+            url: "http://localhost:3000/posts",
+            type: "PUT",
+            data: JSON.stringify([title, body]),
+
+            success: function (data) {
+              alert('Updated Successfully');
+                window.location.href = "../Index";
+            },
+           error: function (msg) { alert(msg); }
+         })
+       })
+     })
+         ```
