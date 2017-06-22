@@ -34,7 +34,7 @@ Adding data to directives allows you to validate your html code on W3 validator 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+Option A. Because you want to apply ng-app directive to the most parent scope like html or body to allow angular functionality through out your application. 
 ```
 
 #### A
