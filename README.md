@@ -14,6 +14,10 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+angular
+  .module('blog', [
+    "ui.router"
+  ])
 ```
 
 ### Question 2
@@ -26,7 +30,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+adding data- to an html doc allows the html to pass a validator.
 ```
 
 ### Question 3
@@ -35,6 +39,7 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 
 ```text
 Your answer goes here...
+A- this allows angular's scope to encompass then entire app. B would not work because angular app needs access to the body to allow for the data-binding and other functions. C would not work because the app is scoped under an angular command, so the site would hit an error before instantiating the app functions.
 ```
 
 #### A
@@ -91,7 +96,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -101,6 +106,7 @@ What is the `ui-sref` directive, and how is it used?
 
 ```text
 Your answer goes here...
+ui-sref is the label used to route anchor tags in an html document in an angular app with a ui.router dependency.
 ```
 
 ## Part II: APIs & AJAX
@@ -119,6 +125,14 @@ end
 
 ```rb
 # Your answer goes here...
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @posts }
+    end
+  end
 ```
 
 ### Question 7
@@ -130,6 +144,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
 
 ```js
 // Your answer goes here...
+$.ajax ({
+  url: `http://localhost:3000/posts`,
+  type: "GET",
+  dataType: "json"
+}).done((response) => {
+  console.log(response)
+}).fail(() => {
+  console.log("There was an error")
+})
 ```
 
 ### Question 8
@@ -143,4 +166,14 @@ If the Post creation is successful, the new Post should be printed to the browse
 
 ```js
 // Your answer goes here...
+$.ajax({
+  url: `http://localhost:3000/posts`,
+  type: "POST",
+  dataType: "json"
+  data: newPost(title=newPost.title&body=newPost.body)
+}).done(() => {
+  console.log("Post successful")
+}).fail(() => {
+  console.log("There was an error")
+})
 ```
