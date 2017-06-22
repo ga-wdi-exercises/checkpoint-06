@@ -28,7 +28,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+We use data-ng-click for validation purposes especially if we are working with API.
 ```
 
 ### Question 3
