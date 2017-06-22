@@ -15,6 +15,7 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 ```js
 // Your answer goes here...
 ```
+angular.module('blog', ['ui.router'])
 
 ### Question 2
 
@@ -28,6 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```text
 Your answer goes here...
 ```
+HTML validations for the 'data'
 
 ### Question 3
 
@@ -36,7 +38,7 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 ```text
 Your answer goes here...
 ```
-
+I would choose A or C. In all honestly if I remember correctly, the placements can be anywhere, I wouldn't choose B only because of proper placement reasons.
 #### A
 
 ```html
@@ -91,7 +93,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -102,6 +104,7 @@ What is the `ui-sref` directive, and how is it used?
 ```text
 Your answer goes here...
 ```
+It is a state directive allowing us to link to states.
 
 ## Part II: APIs & AJAX
 
@@ -120,6 +123,10 @@ end
 ```rb
 # Your answer goes here...
 ```
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @post}
+  end
 
 ### Question 7
 
@@ -131,6 +138,20 @@ Let's say the Posts in the previous question are available at `http://localhost:
 ```js
 // Your answer goes here...
 ```
+$(document).ready(()=>{
+  $(".get").on("click", () => {
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: "someUrl"
+    }).done((response) => {
+      console.log("Retrieved");
+    }).fail(() => {
+      console.log("Failed to get.");
+    })
+  })
+})
+
 
 ### Question 8
 
