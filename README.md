@@ -26,7 +26,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 ```text
-Your answer goes here...
+Adding data to directives allows you to validate your html code on W3 validator without errors.  
 ```
 
 ### Question 3
