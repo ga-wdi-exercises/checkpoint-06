@@ -118,12 +118,16 @@ Below is an `index` controller action that maps to a `Post` model in a Rails app
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+
   end
 end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to do |format|
+  format.html {render :index}
+  format.json {render json: @posts}
+end
 ```
 
 ### Question 7
