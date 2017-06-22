@@ -14,6 +14,8 @@ Instantiate a new Angular module called `blog` that takes `ui.router` as a depen
 
 ```js
 // Your answer goes here...
+Angular
+.module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -27,6 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 ```text
 Your answer goes here...
+They are the same thing basically.
 ```
 
 ### Question 3
@@ -35,6 +38,7 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 
 ```text
 Your answer goes here...
+A because it is put at the entry point of the application which is placed at the root element of the page (html or body tags)
 ```
 
 #### A
@@ -91,7 +95,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[ correct answer ] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -101,7 +105,7 @@ What is the `ui-sref` directive, and how is it used?
 
 ```text
 Your answer goes here...
-```
+it creates a link that when clicked directs wihthout reloading the page```
 
 ## Part II: APIs & AJAX
 
@@ -119,6 +123,12 @@ end
 
 ```rb
 # Your answer goes here...
+.controller("PostIndexController", [
+PostIndexControllerFunction
+]);
+function PostIndexControllerFunction(){
+  this.posts = posts
+}
 ```
 
 ### Question 7
@@ -130,6 +140,21 @@ Let's say the Posts in the previous question are available at `http://localhost:
 
 ```js
 // Your answer goes here...
+$(document).ready(()=>{
+$(".get").on("click", (() => {
+    var url = "http://localhost:3000/posts"
+    $.ajax({
+    url: url,
+    type: "get",
+    dataType: "json"
+  }).done(() => {
+    console.log("Step 1 is successful!")
+  }).fail(() => {
+    console.log("Error! Ajax request fails!")
+  })
+})
+})
+
 ```
 
 ### Question 8
@@ -143,4 +168,23 @@ If the Post creation is successful, the new Post should be printed to the browse
 
 ```js
 // Your answer goes here...
+$(document).ready(()=>{
+$(".post").on("click", (() => {
+    $.ajax({
+      url = "http://localhost:3000/posts"
+      type: "POST",
+      data: {
+        title: "Forest Gump",
+        body: "Life is like a box of chocolates"
+      }
+      dataType: "json"
+      url: "/posts"
+    }).done(() => {
+      console.log("Successful!")
+    }).fail(() => {
+      console.log("Error! Ajax request fails!")
+    })
+  })
+})
+
 ```
