@@ -34,7 +34,7 @@ adding "data" makes no differance as far as functionality goes. It just makes it
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-"A" because the app will have access to the entire html page. "B" makes no sence and "C" is a valid use if you want the app to only work inside that div.
+"A" because the app will be scoped to the entire html page. "B" makes no sence and "C" is a valid use if you want the app to only work inside that div.
 ```
 
 #### A
