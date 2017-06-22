@@ -1,10 +1,10 @@
 ## Instructions
 
 1. Fork this repo
-  - Clone your fork
-  - Fill in your answers by writing the appropriate area or placing an 'x' in the square brackets for multiple-choice questions
-  - Add/Commit/Push your changes to Github
-  - Open a pull request
+    - Clone your fork
+    - Fill in your answers by writing the appropriate area or placing an 'x' in the square brackets for multiple-choice questions
+    - Add/Commit/Push your changes to Github
+    - Open a pull request
 
 ## Part I: Angular
 
@@ -124,9 +124,9 @@ end
 ### Question 7
 
 Let's say the Posts in the previous question are available at `http://localhost:3000/posts`. In a front-end application, how could you do the following using AJAX?
-  1. Retrieve all the posts in JSON form
-  2. If Step 1 is successful, print the resulting JSON to the console
-  3. If Step 1 is unsuccessful, print an error message to the console
+    1. Retrieve all the posts in JSON form
+    2. If Step 1 is successful, print the resulting JSON to the console
+    3. If Step 1 is unsuccessful, print an error message to the console
 
 ```js
 // Your answer goes here...
@@ -135,9 +135,9 @@ Let's say the Posts in the previous question are available at `http://localhost:
 ### Question 8
 
 Using the same front-end application and Rails API from the previous question, how would you use AJAX to create a Post through the API? You can assume the following...
-  - The API is RESTful
-  - The `PostsController` contains a strong params method that is used when creating an instance of the `Post` model
-  - Each Post has `title` and `body` attributes, both of which are strings
+    - The API is RESTful
+    - The `PostsController` contains a strong params method that is used when creating an instance of the `Post` model
+    - Each Post has `title` and `body` attributes, both of which are strings
 
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
