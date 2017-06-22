@@ -36,7 +36,10 @@ We use data-ng-click for validation purposes especially if we are working with A
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
 
 ```text
-Your answer goes here...
+#### A is the best usage of `ng-app` because it makes all the controller, states and other resources inn the
+entire html page.
+In the case of #### B, it will not work because since they are in the same level with <body> tag, `ng-app` will be available only in the header. 
+In case of #### C, the <div> tag is before we inject `ng-app`, so it can`t access it.
 ```
 
 #### A
