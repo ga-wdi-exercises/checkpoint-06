@@ -134,7 +134,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
     3. If Step 1 is unsuccessful, print an error message to the console  
 
 ```js
-// Your answer goes here...
+$.ajax({
+  type: 'GET',
+  dataType: 'json',
+  url: 'http://localhost:3000/posts'
+}).dong((response)=>{
+  console.log(response);
+}).fail(()=> {
+  console.log("Failed to retrieve information.");
+})
 ```
 
 ### Question 8
