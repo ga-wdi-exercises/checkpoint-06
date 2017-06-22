@@ -138,7 +138,17 @@ Let's say the Posts in the previous question are available at `http://localhost:
     3. If Step 1 is unsuccessful, print an error message to the console  
 
 ```js
-// Your answer goes here...
+url="http://localhost:3000/posts"
+$.ajax({
+  url:url,
+  type:"get",
+  dataType:"json"
+}).done((response)=>{
+  console.log("successful");
+  console.log(response);})
+.fail(()=>{console.log("failure");})
+
+
 ```
 
 ### Question 8
