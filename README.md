@@ -13,7 +13,8 @@
 Instantiate a new Angular module called `blog` that takes `ui.router` as a dependency.
 
 ```js
-// Your answer goes here...
+Angular
+.module("blog", ["ui.router"])
 ```
 
 ### Question 2
@@ -28,7 +29,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```text
 Your answer goes here...
 ```
-
+They are the same thing. Both will execute the same way.
 ### Question 3
 
 Which of the three following options demonstrates the best usage of `ng-app`? **Explain your answer.**
@@ -36,7 +37,7 @@ Which of the three following options demonstrates the best usage of `ng-app`? **
 ```text
 Your answer goes here...
 ```
-
+Option A. Best practice is to place in the html.
 #### A
 
 ```html
@@ -91,10 +92,10 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
-
+C. is my answer.
 ### Question 5
 
 What is the `ui-sref` directive, and how is it used?
@@ -102,6 +103,7 @@ What is the `ui-sref` directive, and how is it used?
 ```text
 Your answer goes here...
 ```
+This essentially binds a link (an a tag) to a state. If the state is associated with a URL the directive will generate.
 
 ## Part II: APIs & AJAX
 
@@ -118,7 +120,7 @@ end
 ```
 
 ```rb
-# Your answer goes here...
+respond_to :html, :js
 ```
 
 ### Question 7
@@ -129,7 +131,15 @@ Let's say the Posts in the previous question are available at `http://localhost:
     3. If Step 1 is unsuccessful, print an error message to the console  
 
 ```js
-// Your answer goes here...
+format.json { render json: @posts }
+
+$.ajax({
+  data: $(formlogin).serialize(),
+  dataType: 'json'
+  success: function(msg)
+  console.log("success" + msg)
+  error: function(req, err){ console.log('error message' + err)}
+})
 ```
 
 ### Question 8
@@ -142,5 +152,16 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$(".post").on("click", () => {
+  $.ajax({
+    type: 'POST',
+    data: {
+      title: "quiz"
+      body: "checkpoint -06"
+    }
+  }
+  dataType: 'json'
+  })
+}
+This question was a struggle.
 ```
