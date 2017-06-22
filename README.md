@@ -100,7 +100,9 @@ Which one of the following concepts does this best illustrate?
 What is the `ui-sref` directive, and how is it used?
 
 ```text
-Your answer goes here...
+A directive that binds a link/<a> tag to a state. Clicking the link will trigger a state transition with optional parameters.
+
+<a data-ui-sref="WDInstagramShow({id: instagram.id})">{{instagram.author}}</a>
 ```
 
 ## Part II: APIs & AJAX
