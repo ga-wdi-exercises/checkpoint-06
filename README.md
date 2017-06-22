@@ -138,17 +138,17 @@ Let's say the Posts in the previous question are available at `http://localhost:
     3. If Step 1 is unsuccessful, print an error message to the console  
 
 ```js
+
 url="http://localhost:3000/posts"
 $.ajax({
   url:url,
-  type:"get",
+  type:"GET",
   dataType:"json"
 }).done((response)=>{
   console.log("successful");
   console.log(response);})
-.fail(()=>{console.log("failure");})
-
-
+.fail(()=>{
+  console.log("failure");})
 ```
 
 ### Question 8
@@ -161,5 +161,20 @@ Using the same front-end application and Rails API from the previous question, h
 If the Post creation is successful, the new Post should be printed to the browser console. Otherwise, an error message should be printed to the console.
 
 ```js
-// Your answer goes here...
+$.ajax({
+  url: "/posts",
+  data: post: {
+    // title: this.title,
+    // body: this.body
+    title: "aaaa",
+    body: "bbbb"
+  }
+  type: "POST",
+  dataType: "json"
+}).done((response)=>{
+  console.log("successful");
+  console.log(response);})
+.fail(()=>{
+  console.log("failure");})
+
 ```
